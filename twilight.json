@@ -1,155 +1,197 @@
 {
+  "version": "1.0.0",
   "theme_name": "كيدز ستايل",
-  "theme_url": "https://kids-style.store",
-  "author_name": "فريق التطوير",
-  "theme_version": "1.0.0",
+  "repo_url": "https://github.com/rabie202/salla-kids-theme",
   "support_url": "mailto:support@kids-style.store",
-  
-  "theme": {
-    "settings": {
-      "general": {
-        "primary_color": {
-          "label": "اللون الأساسي",
-          "type": "color",
-          "default": "#8B7355"
-        },
-        "secondary_color": {
-          "label": "اللون الثانوي",
-          "type": "color",
-          "default": "#D4B896"
-        },
-        "accent_color": {
-          "label": "لون التمييز",
-          "type": "color",
-          "default": "#E8C8A0"
-        },
-        "background_color": {
-          "label": "لون الخلفية",
-          "type": "color",
-          "default": "#FDF8F3"
-        },
-        "text_color": {
-          "label": "لون النص",
-          "type": "color",
-          "default": "#4A3728"
-        }
-      },
-      "typography": {
-        "heading_font": {
-          "label": "خط العناوين",
-          "type": "font",
-          "default": "Cairo"
-        },
-        "body_font": {
-          "label": "خط النص",
-          "type": "font",
-          "default": "Tajawal"
-        }
-      },
-      "features": {
-        "show_whatsapp_button": {
-          "label": "إظهار زر واتساب",
-          "type": "switch",
-          "default": true
-        },
-        "show_sticky_cart": {
-          "label": "شريط شراء ثابت على الجوال",
-          "type": "switch",
-          "default": true
-        },
-        "show_seasonal_mode": {
-          "label": "وضع موسمي (رمضان، عيد)",
-          "type": "switch",
-          "default": true
-        },
-        "show_testimonials": {
-          "label": "إظهار آراء العملاء",
-          "type": "switch",
-          "default": true
-        },
-        "show_trust_badges": {
-          "label": "شارات الثقة",
-          "type": "switch",
-          "default": true
-        }
-      },
-      "seasonal": {
-        "current_season": {
-          "label": "الموسم الحالي",
-          "type": "select",
-          "default": "normal",
-          "options": ["normal", "ramadan", "eid", "back_to_school", "national_day"]
-        },
-        "season_start_date": {
-          "label": "بداية الموسم",
-          "type": "date"
-        },
-        "season_end_date": {
-          "label": "نهاية الموسم",
-          "type": "date"
-        }
-      }
+  "settings": [
+    {
+      "type": "color",
+      "label": "اللون الأساسي",
+      "id": "primary_color",
+      "format": "color",
+      "value": "#8B7355"
     },
-    "features": [
-      "salla-hero",
-      "salla-testimonials",
-      "salla-features",
-      "salla-image-square",
-      "salla-products-fixed",
-      "salla-products-slider",
-      "salla-products-featured",
-      "salla-brands",
-      "salla-links",
-      "salla-latest-products",
-      "salla-youtube",
-      "salla-banner-fixed",
-      "salla-background-animated",
-      "salla-images-slider",
-      "salla-optimized-square"
-    ],
-    "components": {
-      "hero_section": {
-        "type": "salla-hero",
-        "title": "أهلاً بكم في كيدز ستايل",
-        "text": "ملابس أطفال مريحة وأنيقة لجميع الأعمار من 0 إلى 12 سنة",
-        "image": "",
-        "button_text": "تسوقي الآن",
-        "button_link": "/collections",
-        "alignment": "center"
-      },
-      "categories": {
-        "title": "تسوقي حسب الفئة",
-        "collections": ["baby", "girls", "boys", "accessories"]
-      },
-      "featured_products": {
-        "title": "منتجات مميزة",
-        "type": "salla-products-featured",
-        "limit": 8
-      },
-      "testimonials": {
-        "type": "salla-testimonials",
-        "title": "ماذا يقول أهلنا عنا؟"
-      },
-      "trust_badges": {
-        "title": "لماذا تختار كيدز ستايل؟",
-        "items": [
-          { "icon": "🚚", "title": "شحن سريع", "text": "توصيل خلال 2-4 أيام" },
-          { "icon": "↩️", "title": "إرجاع مجاني", "text": "خلال 14 يوم" },
-          { "icon": "✅", "title": "جودة مضمونة", "text": "أقمشة آمنة على بشرة الأطفال" },
-          { "icon": "💬", "title": "دعم متواصل", "text": "خدمة عملاء ودودة ومتعاونة" }
-        ]
-      },
-      "newsletter": {
-        "title": "اشتركي في نشرتنا",
-        "text": "كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة"
-      },
-      "seasonal_banner": {
-        "enabled": true,
-        "type": "salla-banner-fixed",
-        "title": "عروض الموسم",
-        "discount_text": "خصم يصل إلى 30%",
-        "description": "على تشكيلة واسعة من ملابس الأطفال"
-      }
+    {
+      "type": "color",
+      "label": "اللون الثانوي",
+      "id": "secondary_color",
+      "format": "color",
+      "value": "#D4B896"
+    },
+    {
+      "type": "color",
+      "label": "لون التمييز",
+      "id": "accent_color",
+      "format": "color",
+      "value": "#E8C8A0"
+    },
+    {
+      "type": "color",
+      "label": "لون الخلفية",
+      "id": "background_color",
+      "format": "color",
+      "value": "#FDF8F3"
+    },
+    {
+      "type": "color",
+      "label": "لون النص",
+      "id": "text_color",
+      "format": "color",
+      "value": "#4A3728"
+    },
+    {
+      "type": "string",
+      "label": "خط العناوين",
+      "id": "heading_font",
+      "format": "input",
+      "value": "Cairo"
+    },
+    {
+      "type": "string",
+      "label": "خط النص",
+      "id": "body_font",
+      "format": "input",
+      "value": "Tajawal"
+    },
+    {
+      "type": "boolean",
+      "label": "إظهار زر واتساب",
+      "id": "show_whatsapp_button",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "label": "شريط شراء ثابت على الجوال",
+      "id": "show_sticky_cart",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "label": "وضع موسمي (رمضان، عيد)",
+      "id": "show_seasonal_mode",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "label": "إظهار آراء العملاء",
+      "id": "show_testimonials",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "label": "شارات الثقة",
+      "id": "show_trust_badges",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "list",
+      "label": "الموسم الحالي",
+      "id": "current_season",
+      "format": "select",
+      "options": [
+        "normal",
+        "ramadan",
+        "eid",
+        "back_to_school",
+        "national_day"
+      ],
+      "selected": "normal"
+    },
+    {
+      "type": "string",
+      "label": "بداية الموسم",
+      "id": "season_start_date",
+      "format": "input"
+    },
+    {
+      "type": "string",
+      "label": "نهاية الموسم",
+      "id": "season_end_date",
+      "format": "input"
+    }
+  ],
+  "features": [
+    "component-featured-products",
+    "component-fixed-banner",
+    "component-fixed-products",
+    "component-photos-slider",
+    "component-products-slider",
+    "component-parallax-background",
+    "component-random-testimonials",
+    "component-testimonials",
+    "component-square-photos",
+    "component-store-features",
+    "component-youtube",
+    "filters"
+  ],
+  "components": {
+    "hero_section": {
+      "type": "component-fixed-banner",
+      "title": "أهلاً بكم في كيدز ستايل",
+      "text": "ملابس أطفال مريحة وأنيقة لجميع الأعمار من 0 إلى 12 سنة",
+      "image": "",
+      "button_text": "تسوقي الآن",
+      "button_link": "/collections",
+      "alignment": "center"
+    },
+    "categories": {
+      "title": "تسوقي حسب الفئة",
+      "collections": [
+        "baby",
+        "girls",
+        "boys",
+        "accessories"
+      ]
+    },
+    "featured_products": {
+      "title": "منتجات مميزة",
+      "type": "component-featured-products",
+      "limit": 8
+    },
+    "testimonials": {
+      "type": "component-testimonials",
+      "title": "ماذا يقول أهلنا عنا؟"
+    },
+    "trust_badges": {
+      "title": "لماذا تختار كيدز ستايل؟",
+      "items": [
+        {
+          "icon": "🚚",
+          "title": "شحن سريع",
+          "text": "توصيل خلال 2-4 أيام"
+        },
+        {
+          "icon": "↩️",
+          "title": "إرجاع مجاني",
+          "text": "خلال 14 يوم"
+        },
+        {
+          "icon": "✅",
+          "title": "جودة مضمونة",
+          "text": "أقمشة آمنة على بشرة الأطفال"
+        },
+        {
+          "icon": "💬",
+          "title": "دعم متواصل",
+          "text": "خدمة عملاء ودودة ومتعاونة"
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "اشتركي في نشرتنا",
+      "text": "كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة"
+    },
+    "seasonal_banner": {
+      "enabled": true,
+      "type": "component-fixed-banner",
+      "title": "عروض الموسم",
+      "discount_text": "خصم يصل إلى 30%",
+      "description": "على تشكيلة واسعة من ملابس الأطفال"
     }
   }
 }
