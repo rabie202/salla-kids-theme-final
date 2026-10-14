@@ -147,6 +147,7 @@
             "button_link": "/collections"
         },
         "categories": {
+            "type": "component-square-photos",
             "title": "تسوقي حسب الفئة",
             "collections": [
                 "baby",
@@ -156,15 +157,16 @@
             ]
         },
         "featured_products": {
-            "title": "منتجات مميزة",
             "type": "component-featured-products",
+            "title": "منتجات مميزة",
             "limit": 8
         },
         "testimonials": {
             "type": "component-testimonials",
             "title": "ماذا يقول أهلنا عنا؟"
         },
-        "trust_badges": {
+        "store_features": {
+            "type": "component-store-features",
             "title": "لماذا تختار كيدز ستايل؟",
             "items": [
                 {
@@ -188,15 +190,6 @@
                     "text": "خدمة عملاء ودودة ومتعاونة"
                 }
             ]
-        },
-        "newsletter": {
-            "title": "اشتركي في نشرتنا",
-            "text": "كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة"
-        },
-        "seasonal_banner": {
-            "type": "component-fixed-banner",
-            "title": "عروض الموسم",
-            "text": "خصم يصل إلى 30% على تشكيلة واسعة من ملابس الأطفال"
         }
     }
 }
