@@ -1,30 +1,58 @@
 {
-  "blocks": {
-    "header": {
-      "cart": "السلة"
+    "general": {
+        "home": "الرئيسية",
+        "shop": "تسوقي",
+        "about": "من نحن",
+        "contact": "اتصل بنا",
+        "cart": "السلة",
+        "checkout": "إتمام الشراء",
+        "account": "حسابي"
     },
-    "appBanner": {
-      "download_now": "حمله الان"
-    }
-  },
-  "pages": {
+    "navigation": {
+        "baby": "رضع (0-2)",
+        "girls": "بنات (2-12)",
+        "boys": "الأولاد (2-12)",
+        "accessories": "إكسسوارات",
+        "sale": "العروض"
+    },
+    "product": {
+        "add_to_cart": "أضيفي للسلة",
+        "buy_now": "اشتري الآن",
+        "out_of_stock": "نفذت الكمية",
+        "sale": "خصم",
+        "new": "جديد",
+        "reviews": "تقييم",
+        "related_products": "منتجات مشابهة"
+    },
     "cart": {
-      "cart_options": "خيارات السلة"
+        "empty": "سلتك فارغة",
+        "empty_message": "لم تقومي بإضافة أي منتجات بعد. ابدئي التسوق الآن!",
+        "subtotal": "المجموع الفرعي",
+        "shipping": "الشحن",
+        "free_shipping": "مجاني",
+        "total": "الإجمالي",
+        "checkout": "إتمام الشراء",
+        "continue_shopping": "مواصلة التسوق",
+        "discount_code": "كود الخصم",
+        "apply": "تطبيق"
     },
-    "products": {
-      "barcode": "الباركود"
+    "footer": {
+        "about_us": "عن كيدز ستايل",
+        "quick_links": "روابط سريعة",
+        "customer_service": "خدمة العملاء",
+        "contact_us": "تواصل معنا",
+        "newsletter": "النشرة البريدية",
+        "newsletter_text": "كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة",
+        "rights": "جميع الحقوق محفوظة"
     },
-    "order": {
-      "can_edit_or_delete_your_review_within": "يمكنك تعديل أو حذف تقييمك خلال",
-      "edit_period_ended": "تم انتهاء المدة المحددة لتعديل التقييم",
-      "delete_period_ended": "تم انتهاء المدة المحددة لحذف التقييم",
-      "days_since_added": "أيام من إضافته",
-      "option_name": "الخيار",
-      "option_content": "المحتوى"
+    "features": {
+        "fast_shipping": "شحن سريع",
+        "fast_shipping_desc": "توصيل خلال 2-4 أيام",
+        "free_return": "إرجاع مجاني",
+        "free_return_desc": "خلال 14 يوم",
+        "quality": "جودة مضمونة",
+        "quality_desc": "أقمشة آمنة على بشرة الأطفال",
+        "support": "دعم متواصل",
+        "support_desc": "خدمة عملاء ودودة ومتعاونة"
     }
-  },
-  "common": {
-    "bank_offer_sub_title_multiple": "ادفع قيمة مشترياتك عبر أحد البطاقات البنكة التالية واحصل على الخصم المحدد",
-    "bank_offer_sub_title_single": "ادفع قيمة مشترياتك عبر أحد بطاقات بنك :bank_name واحصل على خصم بنسبة "
-  }
 }

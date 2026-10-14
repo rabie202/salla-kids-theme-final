@@ -1,0 +1,386 @@
+/* ============================================
+   كيدز ستايل - التصميم المتجاوب (Responsive)
+   ============================================ */
+
+/* ===== شاشات كبيرة جداً (1400px+) ===== */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1360px;
+    }
+}
+
+/* ===== شاشات متوسطة (992px - 1199px) ===== */
+@media (max-width: 1199px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .features-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .brands-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+    
+    .offer-discount {
+        font-size: 3rem;
+    }
+}
+
+/* ===== شاشات صغيرة (768px - 991px) ===== */
+@media (max-width: 991px) {
+    .container {
+        max-width: 720px;
+    }
+    
+    .header-search {
+        display: none;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .product-gallery .main-image img {
+        height: 350px;
+    }
+    
+    .cart-layout {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-summary {
+        position: static;
+    }
+    
+    .cart-item {
+        grid-template-columns: 80px 1fr auto;
+    }
+    
+    .cart-item-total {
+        display: none;
+    }
+}
+
+/* ===== جوال (576px - 767px) ===== */
+@media (max-width: 767px) {
+    :root {
+        --space-xl: 2rem;
+        --space-2xl: 2.5rem;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 0 var(--space-sm);
+    }
+    
+    .top-bar-text {
+        font-size: 0.75rem;
+    }
+    
+    .top-bar-links {
+        display: none;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+    
+    .header-actions {
+        gap: var(--space-xs);
+    }
+    
+    .features-strip-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .feature-item {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--space-xs);
+    }
+    
+    .feature-text h3 {
+        font-size: 0.9rem;
+    }
+    
+    .feature-text p {
+        font-size: 0.8rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .product-image img {
+        height: 200px;
+    }
+    
+    .product-info {
+        padding: var(--space-sm);
+    }
+    
+    .product-name {
+        font-size: 0.9rem;
+    }
+    
+    .product-price .price {
+        font-size: 1.1rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .category-image {
+        height: 150px;
+    }
+    
+    .category-card h3 {
+        font-size: 0.95rem;
+        padding: var(--space-sm);
+    }
+    
+    .hero-text h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-text p {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .offer-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .offer-discount {
+        font-size: 2.5rem;
+    }
+    
+    .offer-timer {
+        flex-wrap: wrap;
+        gap: var(--space-sm);
+    }
+    
+    .timer-box {
+        padding: var(--space-xs) var(--space-sm);
+    }
+    
+    .timer-box .number {
+        font-size: 1.5rem;
+    }
+    
+    .testimonials-slider {
+        grid-template-columns: 1fr;
+    }
+    
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+    
+    .collection-tools {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .sort-options {
+        width: 100%;
+    }
+    
+    .sort-options select {
+        flex: 1;
+    }
+    
+    .newsletter-form-large {
+        flex-direction: column;
+    }
+    
+    .product-actions {
+        flex-wrap: wrap;
+    }
+    
+    .product-actions .btn {
+        flex: 1 1 45%;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        gap: var(--space-sm);
+        text-align: center;
+    }
+    
+    /* شريط الشراء الثابت على الجوال */
+    .sticky-cart-bar {
+        display: block;
+    }
+    
+    /* إخفاء زر واتساب على الشاشات الصغيرة */
+    .whatsapp-float {
+        width: 48px;
+        height: 48px;
+        bottom: 80px;
+    }
+}
+
+/* ===== جوال صغير جداً (< 576px) ===== */
+@media (max-width: 575px) {
+    :root {
+        --space-lg: 1rem;
+        --space-md: 0.75rem;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-strip-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .brands-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-item {
+        grid-template-columns: 60px 1fr;
+    }
+    
+    .cart-item-quantity,
+    .cart-item-total {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .product-gallery .main-image img {
+        height: 250px;
+    }
+    
+    .thumbnail-images {
+        overflow-x: auto;
+    }
+    
+    .offer-content h2 {
+        font-size: 1.25rem;
+    }
+    
+    .offer-discount {
+        font-size: 2rem;
+    }
+    
+    .offer-content p {
+        font-size: 1rem;
+    }
+    
+    .order-details {
+        padding: var(--space-md);
+    }
+    
+    .thank-you-actions {
+        flex-direction: column;
+    }
+}
+
+/* ===== تحسينات اللمس للأجهزة اللمسية ===== */
+@media (hover: none) {
+    .product-actions {
+        opacity: 1;
+        transform: none;
+    }
+    
+    .nav-list .dropdown {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+    }
+}
+
+/* ===== تحسينات الأداء ===== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== تحسينات الطباعة ===== */
+@media print {
+    .main-header,
+    .main-footer,
+    .whatsapp-float,
+    .sticky-cart-bar,
+    .top-bar,
+    .features-strip {
+        display: none !important;
+    }
+    
+    .product-layout {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,30 +1,58 @@
 {
-  "blocks": {
-    "header": {
-      "cart": "Cart"
+    "general": {
+        "home": "Home",
+        "shop": "Shop",
+        "about": "About Us",
+        "contact": "Contact Us",
+        "cart": "Cart",
+        "checkout": "Checkout",
+        "account": "My Account"
     },
-    "appBanner": {
-      "download_now": "download now"
-    }
-  },
-  "pages": {
+    "navigation": {
+        "baby": "Baby (0-2)",
+        "girls": "Girls (2-12)",
+        "boys": "Boys (2-12)",
+        "accessories": "Accessories",
+        "sale": "Sale"
+    },
+    "product": {
+        "add_to_cart": "Add to Cart",
+        "buy_now": "Buy Now",
+        "out_of_stock": "Out of Stock",
+        "sale": "Sale",
+        "new": "New",
+        "reviews": "Reviews",
+        "related_products": "Related Products"
+    },
     "cart": {
-      "cart_options": "Cart Options"
+        "empty": "Your cart is empty",
+        "empty_message": "You haven't added any products yet. Start shopping now!",
+        "subtotal": "Subtotal",
+        "shipping": "Shipping",
+        "free_shipping": "Free",
+        "total": "Total",
+        "checkout": "Checkout",
+        "continue_shopping": "Continue Shopping",
+        "discount_code": "Discount Code",
+        "apply": "Apply"
     },
-    "products": {
-      "barcode": "Barcode"
+    "footer": {
+        "about_us": "About Kids Style",
+        "quick_links": "Quick Links",
+        "customer_service": "Customer Service",
+        "contact_us": "Contact Us",
+        "newsletter": "Newsletter",
+        "newsletter_text": "Be the first to know about new offers and products",
+        "rights": "All Rights Reserved"
     },
-    "order": {
-      "can_edit_or_delete_your_review_within": "You can edit or delete your review within",
-      "edit_period_ended": "The period to edit the review has ended",
-      "delete_period_ended": "The period to delete the review has ended",
-      "days_since_added": "days since it was added",
-      "option_name": "Option name",
-      "option_content": "Content"
+    "features": {
+        "fast_shipping": "Fast Shipping",
+        "fast_shipping_desc": "Delivery within 2-4 days",
+        "free_return": "Free Returns",
+        "free_return_desc": "Within 14 days",
+        "quality": "Quality Guaranteed",
+        "quality_desc": "Safe fabrics for children's skin",
+        "support": "Continuous Support",
+        "support_desc": "Friendly and helpful customer service"
     }
-  },
-  "common": {
-    "bank_offer_sub_title_multiple": "Pay for your purchases via one of the following bank cards and get the specified discount",
-    "bank_offer_sub_title_single": "Pay for your purchases via :bank_name bank card and get discount"
-  }
 }

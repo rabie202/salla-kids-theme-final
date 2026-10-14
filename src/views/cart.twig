@@ -1,0 +1,117 @@
+{% extends "layouts/base.twig" %}
+
+{% block title %}سلة التسوق | كيدز ستايل{% endblock %}
+
+{% block content %}
+<div class="cart-page">
+    <div class="container">
+        <h1 class="page-title">سلة التسوق</h1>
+
+        {% if cart.item_count > 0 %}
+            <div class="cart-layout">
+                <!-- جدول المنتجات -->
+                <div class="cart-items">
+                    {% for item in cart.items %}
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="{{ item.product.featured_image | img_url: 'small' }}" alt="{{ item.product.title }}">
+                            </div>
+                            <div class="cart-item-details">
+                                <h3 class="cart-item-title">
+                                    <a href="{{ item.product.url }}">{{ item.product.title }}</a>
+                                </h3>
+                                <div class="cart-item-options">
+                                    {% for option in item.options %}
+                                        <span class="option">{{ option.name }}: {{ option.value }}</span>
+                                    {% endfor %}
+                                </div>
+                                <div class="cart-item-price">
+                                    {{ item.price | currency }}
+                                </div>
+                            </div>
+                            <div class="cart-item-quantity">
+                                <div class="quantity-controls">
+                                    <button type="button" class="quantity-btn minus">-</button>
+                                    <input type="number" value="{{ item.quantity }}" min="1" class="quantity-input">
+                                    <button type="button" class="quantity-btn plus">+</button>
+                                </div>
+                                <a href="{{ item.remove_url }}" class="remove-item">حذف</a>
+                            </div>
+                            <div class="cart-item-total">
+                                {{ item.total_price | currency }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <!-- ملخص الطلب -->
+                <div class="cart-summary">
+                    <div class="summary-card">
+                        <h2>ملخص الطلب</h2>
+                        
+                        <div class="summary-row">
+                            <span>المجموع الفرعي</span>
+                            <span>{{ cart.subtotal | currency }}</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>الشحن</span>
+                            <span>
+                                {% if cart.shipping_price > 0 %}
+                                    {{ cart.shipping_price | currency }}
+                                {% else %}
+                                    <span class="free-shipping">مجاني</span>
+                                {% endif %}
+                            </span>
+                        </div>
+                        
+                        {% if cart.discount > 0 %}
+                            <div class="summary-row discount">
+                                <span>الخصم</span>
+                                <span>-{{ cart.discount | currency }}</span>
+                            </div>
+                        {% endif %}
+                        
+                        <div class="summary-row total">
+                            <span>الإجمالي</span>
+                            <span class="total-price">{{ cart.total | currency }}</span>
+                        </div>
+
+                        <!-- كود الخصم -->
+                        <div class="discount-code">
+                            <input type="text" placeholder="كود الخصم">
+                            <button class="btn btn-secondary">تطبيق</button>
+                        </div>
+
+                        <!-- أزرار الشراء -->
+                        <div class="checkout-actions">
+                            <a href="/checkout" class="btn btn-primary btn-block">إتمام الشراء</a>
+                            <a href="/collections" class="btn btn-outline btn-block">مواصلة التسوق</a>
+                        </div>
+
+                        <!-- طرق الدفع -->
+                        <div class="payment-methods">
+                            <p>طرق الدفع المتاحة:</p>
+                            <div class="payment-icons">
+                                <span>مدى</span>
+                                <span>فيزا</span>
+                                <span>ماستركارد</span>
+                                <span>آبل باي</span>
+                                <span>تابي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <!-- السلة فارغة -->
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <h2>سلتك فارغة</h2>
+                <p>لم تقومي بإضافة أي منتجات بعد. ابدئي التسوق الآن!</p>
+                <a href="/collections" class="btn btn-primary">ابدئي التسوق</a>
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
