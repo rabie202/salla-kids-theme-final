@@ -1,0 +1,48 @@
+{% extends "layouts.master" %}
+
+{% block title %}{{ category.name|default(page.title) }} | كيدز ستايل{% endblock %}
+
+{% block content %}
+<div class="collection-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <a href="/">الرئيسية</a> / <span>{{ category.name|default(page.title) }}</span>
+        </div>
+    </nav>
+
+    <!-- بانر الفئة -->
+    <div class="collection-banner">
+        <div class="container">
+            <h1>{{ category.name|default(page.title) }}</h1>
+            <p>{{ category.description|default('') }}</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- أدوات الفرز -->
+        <div class="collection-tools">
+            <div class="results-count">
+                <span>{{ collection.products_count }} منتج</span>
+            </div>
+            <div class="sort-options">
+                <label>ترتيب حسب:</label>
+                <select>
+                    <option value="featured">المميز</option>
+                    <option value="newest">الأحدث</option>
+                    <option value="price-asc">السعر: من الأقل</option>
+                    <option value="price-desc">السعر: من الأعلى</option>
+                    <option value="best-selling">الأكثر مبيعاً</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- شبكة المنتجات -->
+        <salla-products-list source="categories" source-value="{{ category.id|default('') }}" product-card-component="custom-salla-product-card" filters-results="true"></salla-products-list>
+
+        {% if not collection.products|length %}
+            <div class="empty-collection">لا توجد منتجات في هذه الفئة حالياً.</div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

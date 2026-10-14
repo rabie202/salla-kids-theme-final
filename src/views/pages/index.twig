@@ -1,0 +1,239 @@
+{% extends "layouts.master" %}
+
+{% block content %}
+<!-- قسم البانر الرئيسي -->
+<section class="hero-section">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>أهلاً بكم في كيدز ستايل</h1>
+            <p>ملابس أطفال مريحة وأنيقة لجميع الأعمار من 0 إلى 12 سنة</p>
+            <div class="hero-buttons">
+                <a href="/collections" class="btn btn-primary">تسوقي الآن</a>
+                <a href="/collections/sale" class="btn btn-secondary">اكتشفي العروض</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- صورة البانر -->
+        </div>
+    </div>
+</section>
+
+<!-- شريط المميزات -->
+<section class="features-strip">
+    <div class="container">
+        <div class="features-strip-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🚚</span>
+                <div class="feature-text">
+                    <h3>شحن سريع</h3>
+                    <p>توصيل خلال 2-4 أيام</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">↩️</span>
+                <div class="feature-text">
+                    <h3>إرجاع مجاني</h3>
+                    <p>خلال 14 يوم</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">✅</span>
+                <div class="feature-text">
+                    <h3>جودة مضمونة</h3>
+                    <p>أقمشة آمنة على بشرة الأطفال</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💬</span>
+                <div class="feature-text">
+                    <h3>دعم متواصل</h3>
+                    <p>خدمة عملاء ودودة ومتعاونة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- الفئات -->
+<section class="categories-section">
+    <div class="container">
+        <h2 class="section-title">تسوقي حسب الفئة</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <a href="/collections/baby">
+                    <div class="category-image baby-bg">
+                        <!-- صورة الرضع -->
+                    </div>
+                    <h3>رضع (0-2)</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="/collections/girls">
+                    <div class="category-image girls-bg">
+                        <!-- صورة البنات -->
+                    </div>
+                    <h3>بنات (2-12)</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="/collections/boys">
+                    <div class="category-image boys-bg">
+                        <!-- صورة الأولاد -->
+                    </div>
+                    <h3>أولاد (2-12)</h3>
+                </a>
+            </div>
+            <div class="category-card">
+                <a href="/collections/accessories">
+                    <div class="category-image accessories-bg">
+                        <!-- صورة الإكسسوارات -->
+                    </div>
+                    <h3>إكسسوارات</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- المنتجات المميزة -->
+<section class="featured-products">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">منتجات مميزة</h2>
+            <a href="/collections" class="view-all">عرض الكل ←</a>
+        </div>
+        <salla-products-list source="latest" limit="8" product-card-component="custom-salla-product-card"></salla-products-list>
+    </div>
+</section>
+
+<!-- بانر العروض -->
+<section class="offer-banner">
+    <div class="container">
+        <div class="offer-content">
+            <h2>عروض الموسم الكبرى</h2>
+            <div class="offer-discount">خصم يصل إلى 30%</div>
+            <p>على تشكيلة واسعة من ملابس الأطفال</p>
+            <div class="offer-timer">
+                <div class="timer-box">
+                    <span class="number" id="days">00</span>
+                    <span class="label">يوم</span>
+                </div>
+                <div class="timer-box">
+                    <span class="number" id="hours">00</span>
+                    <span class="label">ساعة</span>
+                </div>
+                <div class="timer-box">
+                    <span class="number" id="minutes">00</span>
+                    <span class="label">دقيقة</span>
+                </div>
+                <div class="timer-box">
+                    <span class="number" id="seconds">00</span>
+                    <span class="label">ثانية</span>
+                </div>
+            </div>
+            <a href="/collections/sale" class="btn btn-offer">تسوقي العروض الآن</a>
+        </div>
+    </div>
+</section>
+
+<!-- آراء العملاء -->
+{% if theme.settings.get('show_testimonials') %}
+<section class="testimonials-section">
+    <div class="container">
+        <h2 class="section-title">ماذا يقول أهلنا عنا؟</h2>
+        <div class="testimonials-slider">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"خامة ممتازة ومريحة جداً على بشرة ابنتي. التوصيل كان سريع والتغليف راقي. شكراً كيدز ستايل!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">أم سارة</span>
+                    <span class="author-location">الرياض</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"أفضل متجر لملابس الأطفال. الألوان جميلة والأقمشة آمنة. ابني يحب ملابسه الجديدة!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">أم محمد</span>
+                    <span class="author-location">جدة</span>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★☆</div>
+                <p class="testimonial-text">"تشكيلة واسعة وأسعار معقولة. خدمة العملاء متعاونة جداً. أنصح بشدة!"</p>
+                <div class="testimonial-author">
+                    <span class="author-name">أم فهد</span>
+                    <span class="author-location">الدمام</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- الماركات -->
+<section class="brands-section">
+    <div class="container">
+        <h2 class="section-title">ماركات نثق بها</h2>
+        <div class="brands-grid">
+            <div class="brand-logo">ماركة 1</div>
+            <div class="brand-logo">ماركة 2</div>
+            <div class="brand-logo">ماركة 3</div>
+            <div class="brand-logo">ماركة 4</div>
+            <div class="brand-logo">ماركة 5</div>
+        </div>
+    </div>
+</section>
+
+<!-- النشرة البريدية -->
+<section class="newsletter-section">
+    <div class="container">
+        <div class="newsletter-content">
+            <h2>اشتركي في نشرتنا</h2>
+            <p>كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة</p>
+            <form class="newsletter-form-large">
+                <input type="email" placeholder="بريدك الإلكتروني" required>
+                <button type="submit" class="btn btn-primary">اشتراك</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // العد التنازلي للعروض
+    function startCountdown() {
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 7);
+        
+        function updateTimer() {
+            const now = new Date();
+            const diff = endDate - now;
+            
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').textContent = String(days).padStart(2, '0');
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+    }
+    
+    startCountdown();
+</script>
+{% endblock %}
