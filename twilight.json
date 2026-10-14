@@ -1,0 +1,155 @@
+{
+  "theme_name": "كيدز ستايل",
+  "theme_url": "https://kids-style.store",
+  "author_name": "فريق التطوير",
+  "theme_version": "1.0.0",
+  "support_url": "mailto:support@kids-style.store",
+  
+  "theme": {
+    "settings": {
+      "general": {
+        "primary_color": {
+          "label": "اللون الأساسي",
+          "type": "color",
+          "default": "#8B7355"
+        },
+        "secondary_color": {
+          "label": "اللون الثانوي",
+          "type": "color",
+          "default": "#D4B896"
+        },
+        "accent_color": {
+          "label": "لون التمييز",
+          "type": "color",
+          "default": "#E8C8A0"
+        },
+        "background_color": {
+          "label": "لون الخلفية",
+          "type": "color",
+          "default": "#FDF8F3"
+        },
+        "text_color": {
+          "label": "لون النص",
+          "type": "color",
+          "default": "#4A3728"
+        }
+      },
+      "typography": {
+        "heading_font": {
+          "label": "خط العناوين",
+          "type": "font",
+          "default": "Cairo"
+        },
+        "body_font": {
+          "label": "خط النص",
+          "type": "font",
+          "default": "Tajawal"
+        }
+      },
+      "features": {
+        "show_whatsapp_button": {
+          "label": "إظهار زر واتساب",
+          "type": "switch",
+          "default": true
+        },
+        "show_sticky_cart": {
+          "label": "شريط شراء ثابت على الجوال",
+          "type": "switch",
+          "default": true
+        },
+        "show_seasonal_mode": {
+          "label": "وضع موسمي (رمضان، عيد)",
+          "type": "switch",
+          "default": true
+        },
+        "show_testimonials": {
+          "label": "إظهار آراء العملاء",
+          "type": "switch",
+          "default": true
+        },
+        "show_trust_badges": {
+          "label": "شارات الثقة",
+          "type": "switch",
+          "default": true
+        }
+      },
+      "seasonal": {
+        "current_season": {
+          "label": "الموسم الحالي",
+          "type": "select",
+          "default": "normal",
+          "options": ["normal", "ramadan", "eid", "back_to_school", "national_day"]
+        },
+        "season_start_date": {
+          "label": "بداية الموسم",
+          "type": "date"
+        },
+        "season_end_date": {
+          "label": "نهاية الموسم",
+          "type": "date"
+        }
+      }
+    },
+    "features": [
+      "salla-hero",
+      "salla-testimonials",
+      "salla-features",
+      "salla-image-square",
+      "salla-products-fixed",
+      "salla-products-slider",
+      "salla-products-featured",
+      "salla-brands",
+      "salla-links",
+      "salla-latest-products",
+      "salla-youtube",
+      "salla-banner-fixed",
+      "salla-background-animated",
+      "salla-images-slider",
+      "salla-optimized-square"
+    ],
+    "components": {
+      "hero_section": {
+        "type": "salla-hero",
+        "title": "أهلاً بكم في كيدز ستايل",
+        "text": "ملابس أطفال مريحة وأنيقة لجميع الأعمار من 0 إلى 12 سنة",
+        "image": "",
+        "button_text": "تسوقي الآن",
+        "button_link": "/collections",
+        "alignment": "center"
+      },
+      "categories": {
+        "title": "تسوقي حسب الفئة",
+        "collections": ["baby", "girls", "boys", "accessories"]
+      },
+      "featured_products": {
+        "title": "منتجات مميزة",
+        "type": "salla-products-featured",
+        "limit": 8
+      },
+      "testimonials": {
+        "type": "salla-testimonials",
+        "title": "ماذا يقول أهلنا عنا؟"
+      },
+      "trust_badges": {
+        "title": "لماذا تختار كيدز ستايل؟",
+        "items": [
+          { "icon": "🚚", "title": "شحن سريع", "text": "توصيل خلال 2-4 أيام" },
+          { "icon": "↩️", "title": "إرجاع مجاني", "text": "خلال 14 يوم" },
+          { "icon": "✅", "title": "جودة مضمونة", "text": "أقمشة آمنة على بشرة الأطفال" },
+          { "icon": "💬", "title": "دعم متواصل", "text": "خدمة عملاء ودودة ومتعاونة" }
+        ]
+      },
+      "newsletter": {
+        "title": "اشتركي في نشرتنا",
+        "text": "كوني أول من يعرف عن العروض الجديدة والمنتجات المميزة"
+      },
+      "seasonal_banner": {
+        "enabled": true,
+        "type": "salla-banner-fixed",
+        "title": "عروض الموسم",
+        "discount_text": "خصم يصل إلى 30%",
+        "description": "على تشكيلة واسعة من ملابس الأطفال"
+      }
+    }
+  }
+}
