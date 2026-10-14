@@ -247,36 +247,3 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initLazyLoading();
 });
-
-class KidsStyleProductCard extends HTMLElement {
-    connectedCallback() {
-        try {
-            const product = JSON.parse(this.getAttribute('product') || '{}');
-            const url = product.url || '#';
-            const title = product.name || product.title || '';
-            const image = product.image?.url || product.image || product.thumbnail || '';
-            const price = product.price?.formatted || product.price || '';
-            const oldPrice = product.regular_price?.formatted || product.compare_at_price?.formatted || '';
-            this.innerHTML = `
-                <article class="product-card">
-                    <a href="${url}" class="product-image">
-                        ${image ? `<img src="${image}" alt="${title}" loading="lazy">` : ''}
-                    </a>
-                    <div class="product-info">
-                        <h3 class="product-name"><a href="${url}">${title}</a></h3>
-                        <div class="product-price">
-                            ${oldPrice ? `<span class="compare-price">${oldPrice}</span>` : ''}
-                            <span class="price">${price}</span>
-                        </div>
-                        <salla-add-product-button product-id="${product.id || ''}" fill="solid">أضيفي للسلة</salla-add-product-button>
-                    </div>
-                </article>`;
-        } catch (error) {
-            console.warn('Kids Style product card error', error);
-        }
-    }
-}
-
-if (!customElements.get('custom-salla-product-card')) {
-    customElements.define('custom-salla-product-card', KidsStyleProductCard);
-}

@@ -1,8 +1,9 @@
 {
-  "version": "1.0.0",
-  "theme_name": "Kids Style",
-  "repo_url": "https://github.com/rabie202/salla-kids-theme",
-  "support_url": "https://kids-style.store",
+  "name": {
+    "ar": "كيدز ستايل",
+    "en": "Kids Style"
+  },
+  "repository": "https://github.com/rabie202/salla-kids-theme",
   "author_email": "support@kids-style.store",
   "features": [
     "fonts",
@@ -26,6 +27,7 @@
       "id": "show_whatsapp_button",
       "label": "إظهار زر واتساب",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -33,6 +35,7 @@
       "id": "show_sticky_cart",
       "label": "شريط شراء ثابت على الجوال",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -40,6 +43,7 @@
       "id": "show_seasonal_mode",
       "label": "وضع موسمي (رمضان، عيد)",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -47,6 +51,7 @@
       "id": "show_testimonials",
       "label": "إظهار آراء العملاء",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -54,7 +59,14 @@
       "id": "show_trust_badges",
       "label": "شارات الثقة",
       "format": "switch",
+      "value": true,
       "selected": true
+    },
+    {
+      "type": "static",
+      "id": "static-colors-title",
+      "format": "title",
+      "label": "الألوان"
     },
     {
       "type": "string",
@@ -76,6 +88,12 @@
       "label": "لون التمييز",
       "format": "color",
       "value": "#E8C8A0"
+    },
+    {
+      "type": "static",
+      "id": "static-season-title",
+      "format": "title",
+      "label": "الموسم"
     },
     {
       "type": "items",
@@ -119,5 +137,10 @@
       "source": "Manual"
     }
   ],
-  "components": []
+  "components": [],
+  "support_url": "https://kids-style.store",
+  "description": {
+    "ar": "قالب كيدز ستايل لمتاجر ملابس الأطفال.",
+    "en": "Kids Style theme for children clothing stores."
+  }
 }

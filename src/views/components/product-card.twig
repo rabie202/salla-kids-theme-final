@@ -1,1 +1,34 @@
-<custom-salla-product-card product='{{ product|json_encode }}'></custom-salla-product-card>
+<!-- بطاقة المنتج -->
+<div class="product-card">
+    <div class="product-image">
+        <a href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}" loading="lazy">
+            {% if product.compare_at_price > product.price %}
+                <span class="badge sale">خصم</span>
+            {% endif %}
+            {% if product.is_new %}
+                <span class="badge new">جديد</span>
+            {% endif %}
+        </a>
+        <div class="product-actions">
+            <button class="action-btn wishlist-btn" title="أضيفي للمفضلة">❤️</button>
+            <button class="action-btn quick-view-btn" title="عرض سريع">👁️</button>
+        </div>
+    </div>
+    <div class="product-info">
+        <h3 class="product-name">
+            <a href="{{ product.url }}">{{ product.title }}</a>
+        </h3>
+        <div class="product-rating">
+            <span class="stars">★★★★★</span>
+            <span class="rating-count">({{ product.reviews_count }})</span>
+        </div>
+        <div class="product-price">
+            {% if product.compare_at_price > product.price %}
+                <span class="compare-price">{{ product.compare_at_price | currency }}</span>
+            {% endif %}
+            <span class="price">{{ product.price | currency }}</span>
+        </div>
+        <a href="{{ product.url }}" class="btn btn-primary btn-block">أضيفي للسلة</a>
+    </div>
+</div>

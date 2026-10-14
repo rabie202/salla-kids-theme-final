@@ -1,1 +1,175 @@
-{% extends "layouts.master" %}{% block content %}{% include 'pages/product/single.twig' %}{% endblock %}
+{% extends "layouts/base.twig" %}
+
+{% block title %}{{ product.title }} | كيدز ستايل{% endblock %}
+
+{% block content %}
+<div class="product-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <a href="/">الرئيسية</a> / 
+            <a href="{{ product.collection.url }}">{{ product.collection.title }}</a> / 
+            <span>{{ product.title }}</span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="product-layout">
+            <!-- صور المنتج -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+                </div>
+                <div class="thumbnail-images">
+                    {% for image in product.images %}
+                        <div class="thumbnail {% if forloop.first %}active{% endif %}">
+                            <img src="{{ image | img_url: 'small' }}" alt="{{ product.title }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- تفاصيل المنتج -->
+            <div class="product-details">
+                <h1 class="product-title">{{ product.title }}</h1>
+                
+                <!-- السعر -->
+                <div class="product-price">
+                    {% if product.compare_at_price > product.price %}
+                        <span class="compare-price">{{ product.compare_at_price | currency }}</span>
+                    {% endif %}
+                    <span class="price">{{ product.price | currency }}</span>
+                    {% if product.compare_at_price > product.price %}
+                        <span class="discount-badge">وفّري {{ product.compare_at_price | minus: product.price | currency }}</span>
+                    {% endif %}
+                </div>
+
+                <!-- التقييم -->
+                <div class="product-rating">
+                    <span class="stars">★★★★★</span>
+                    <span class="rating-count">({{ product.reviews_count }} تقييم)</span>
+                </div>
+
+                <!-- الوصف -->
+                <div class="product-description">
+                    {{ product.description }}
+                </div>
+
+                <!-- الخيارات -->
+                {% if product.options.size > 0 %}
+                    <div class="product-options">
+                        {% for option in product.options %}
+                            <div class="option-group">
+                                <label>{{ option.name }}</label>
+                                <div class="option-values">
+                                    {% for value in option.values %}
+                                        <button class="option-btn {% if forloop.first %}active{% endif %}">{{ value }}</button>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <!-- الكمية -->
+                <div class="quantity-selector">
+                    <label>الكمية</label>
+                    <div class="quantity-controls">
+                        <button type="button" class="quantity-btn minus">-</button>
+                        <input type="number" value="1" min="1" class="quantity-input">
+                        <button type="button" class="quantity-btn plus">+</button>
+                    </div>
+                </div>
+
+                <!-- أزرار الشراء -->
+                <div class="product-actions">
+                    <button class="btn btn-primary add-to-cart">أضيفي للسلة</button>
+                    <button class="btn btn-secondary buy-now">اشتري الآن</button>
+                    <button class="btn btn-wishlist">❤️</button>
+                </div>
+
+                <!-- معلومات إضافية -->
+                <div class="product-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">رقم المنتج:</span>
+                        <span class="meta-value">{{ product.sku }}</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">الفئة:</span>
+                        <a href="{{ product.collection.url }}">{{ product.collection.title }}</a>
+                    </div>
+                </div>
+
+                <!-- الشحن والإرجاع -->
+                <div class="shipping-info">
+                    <div class="info-item">
+                        <span class="info-icon">🚚</span>
+                        <div class="info-text">
+                            <h4>الشحن</h4>
+                            <p>توصيل خلال 2-4 أيام عمل. شحن مجاني للطلبات فوق 200 ريال.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">↩️</span>
+                        <div class="info-text">
+                            <h4>الإرجاع</h4>
+                            <p>إرجاع مجاني خلال 14 يوم من تاريخ الاستلام.</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">💳</span>
+                        <div class="info-text">
+                            <h4>الدفع</h4>
+                            <p>مدى، فيزا، ماستركارد، آبل باي، تابي</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- المنتجات المشابهة -->
+        <section class="related-products">
+            <h2 class="section-title">منتجات مشابهة</h2>
+            <div class="products-grid">
+                {% for related in product.collections.first.products limit: 4 %}
+                    {% include 'components/product-card.twig' with { product: related } %}
+                {% endfor %}
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // تبديل الصور الرئيسية
+    document.querySelectorAll('.thumbnail').forEach(thumb => {
+        thumb.addEventListener('click', function() {
+            const mainImage = document.querySelector('.main-image img');
+            mainImage.src = this.querySelector('img').src.replace('small', 'large');
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // التحكم في الكمية
+    document.querySelector('.quantity-btn.minus').addEventListener('click', function() {
+        const input = document.querySelector('.quantity-input');
+        if (input.value > 1) input.value--;
+    });
+    document.querySelector('.quantity-btn.plus').addEventListener('click', function() {
+        const input = document.querySelector('.quantity-input');
+        input.value++;
+    });
+
+    // اختيار الخيارات
+    document.querySelectorAll('.option-values').forEach(group => {
+        group.querySelectorAll('.option-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                group.querySelectorAll('.option-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
+</script>
+{% endblock %}

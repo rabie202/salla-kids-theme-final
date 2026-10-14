@@ -1,1 +1,67 @@
-{% extends "layouts.master" %}{% block content %}{% include 'pages/product/index.twig' %}{% endblock %}
+{% extends "layouts/base.twig" %}
+
+{% block title %}{{ collection.title }} | كيدز ستايل{% endblock %}
+
+{% block content %}
+<div class="collection-page">
+    <!-- Breadcrumbs -->
+    <nav class="breadcrumbs">
+        <div class="container">
+            <a href="/">الرئيسية</a> / <span>{{ collection.title }}</span>
+        </div>
+    </nav>
+
+    <!-- بانر الفئة -->
+    <div class="collection-banner">
+        <div class="container">
+            <h1>{{ collection.title }}</h1>
+            <p>{{ collection.description }}</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- أدوات الفرز -->
+        <div class="collection-tools">
+            <div class="results-count">
+                <span>{{ collection.products_count }} منتج</span>
+            </div>
+            <div class="sort-options">
+                <label>ترتيب حسب:</label>
+                <select>
+                    <option value="featured">المميز</option>
+                    <option value="newest">الأحدث</option>
+                    <option value="price-asc">السعر: من الأقل</option>
+                    <option value="price-desc">السعر: من الأعلى</option>
+                    <option value="best-selling">الأكثر مبيعاً</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- شبكة المنتجات -->
+        <div class="products-grid">
+            {% for product in collection.products %}
+                {% include 'components/product-card.twig' with { product: product } %}
+            {% endfor %}
+        </div>
+
+        <!-- الترقيم -->
+        {% if collection.pages > 1 %}
+            <div class="pagination">
+                {% if collection.has_previous %}
+                    <a href="{{ collection.previous_page_url }}" class="page-link">→ السابق</a>
+                {% endif %}
+                {% for page in collection.pages_array %}
+                    {% if page == collection.current_page %}
+                        <span class="page-current">{{ page }}</span>
+                    {% else %}
+                        <a href="{{ collection.page_url: page }}" class="page-link">{{ page }}</a>
+                    {% endif %}
+                {% endfor %}
+                {% if collection.has_next %}
+                    <a href="{{ collection.next_page_url }}" class="page-link">التالي ←</a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
