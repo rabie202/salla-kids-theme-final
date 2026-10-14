@@ -1,195 +1,123 @@
 {
-    "name": {
-        "ar": "كيدز ستايل",
-        "en": "Kids Style"
+  "version": "1.0.0",
+  "theme_name": "Kids Style",
+  "repo_url": "https://github.com/rabie202/salla-kids-theme",
+  "support_url": "https://kids-style.store",
+  "author_email": "support@kids-style.store",
+  "features": [
+    "fonts",
+    "color",
+    "breadcrumb",
+    "component-featured-products",
+    "component-fixed-banner",
+    "component-fixed-products",
+    "component-products-slider",
+    "component-photos-slider",
+    "component-parallax-background",
+    "component-testimonials",
+    "component-square-photos",
+    "component-store-features",
+    "component-youtube",
+    "filters"
+  ],
+  "settings": [
+    {
+      "type": "boolean",
+      "id": "show_whatsapp_button",
+      "label": "إظهار زر واتساب",
+      "format": "switch",
+      "selected": true
     },
-    "repository": "https://github.com/rabie202/salla-kids-theme",
-    "author_email": "support@kids-style.store",
-    "features": [
-        "fonts",
-        "color",
-        "breadcrumb",
-        "component-featured-products",
-        "component-fixed-banner",
-        "component-fixed-products",
-        "component-products-slider",
-        "component-photos-slider",
-        "component-parallax-background",
-        "component-testimonials",
-        "component-square-photos",
-        "component-store-features",
-        "component-youtube",
-        "filters"
-    ],
-    "settings": [
+    {
+      "type": "boolean",
+      "id": "show_sticky_cart",
+      "label": "شريط شراء ثابت على الجوال",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "id": "show_seasonal_mode",
+      "label": "وضع موسمي (رمضان، عيد)",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "id": "show_testimonials",
+      "label": "إظهار آراء العملاء",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "boolean",
+      "id": "show_trust_badges",
+      "label": "شارات الثقة",
+      "format": "switch",
+      "selected": true
+    },
+    {
+      "type": "string",
+      "id": "primary_color",
+      "label": "اللون الأساسي",
+      "format": "color",
+      "value": "#8B7355"
+    },
+    {
+      "type": "string",
+      "id": "secondary_color",
+      "label": "اللون الثانوي",
+      "format": "color",
+      "value": "#D4B896"
+    },
+    {
+      "type": "string",
+      "id": "accent_color",
+      "label": "لون التمييز",
+      "format": "color",
+      "value": "#E8C8A0"
+    },
+    {
+      "type": "items",
+      "id": "current_season",
+      "label": "الموسم الحالي",
+      "format": "dropdown-list",
+      "selected": [
         {
-            "type": "boolean",
-            "id": "show_whatsapp_button",
-            "label": "إظهار زر واتساب",
-            "format": "switch",
-            "value": true,
-            "selected": true
-        },
-        {
-            "type": "boolean",
-            "id": "show_sticky_cart",
-            "label": "شريط شراء ثابت على الجوال",
-            "format": "switch",
-            "value": true,
-            "selected": true
-        },
-        {
-            "type": "boolean",
-            "id": "show_seasonal_mode",
-            "label": "وضع موسمي (رمضان، عيد)",
-            "format": "switch",
-            "value": true,
-            "selected": true
-        },
-        {
-            "type": "boolean",
-            "id": "show_testimonials",
-            "label": "إظهار آراء العملاء",
-            "format": "switch",
-            "value": true,
-            "selected": true
-        },
-        {
-            "type": "boolean",
-            "id": "show_trust_badges",
-            "label": "شارات الثقة",
-            "format": "switch",
-            "value": true,
-            "selected": true
-        },
-        {
-            "type": "static",
-            "id": "static-colors-title",
-            "format": "title",
-            "label": "الألوان"
-        },
-        {
-            "type": "color",
-            "id": "primary_color",
-            "label": "اللون الأساسي",
-            "format": "color",
-            "value": "#8B7355"
-        },
-        {
-            "type": "color",
-            "id": "secondary_color",
-            "label": "اللون الثانوي",
-            "format": "color",
-            "value": "#D4B896"
-        },
-        {
-            "type": "color",
-            "id": "accent_color",
-            "label": "لون التمييز",
-            "format": "color",
-            "value": "#E8C8A0"
-        },
-        {
-            "type": "static",
-            "id": "static-season-title",
-            "format": "title",
-            "label": "الموسم"
-        },
-        {
-            "type": "items",
-            "id": "current_season",
-            "label": "الموسم الحالي",
-            "format": "dropdown-list",
-            "selected": [
-                {
-                    "label": "عادي",
-                    "value": "normal",
-                    "key": "season-normal-001"
-                }
-            ],
-            "options": [
-                {
-                    "label": "عادي",
-                    "value": "normal",
-                    "key": "season-normal-001"
-                },
-                {
-                    "label": "رمضان",
-                    "value": "ramadan",
-                    "key": "season-ramadan-002"
-                },
-                {
-                    "label": "عيد",
-                    "value": "eid",
-                    "key": "season-eid-003"
-                },
-                {
-                    "label": "العودة للمدارس",
-                    "value": "back_to_school",
-                    "key": "season-school-004"
-                },
-                {
-                    "label": "اليوم الوطني",
-                    "value": "national_day",
-                    "key": "season-national-005"
-                }
-            ],
-            "source": "Manual"
+          "label": "عادي",
+          "value": "normal",
+          "key": "season-normal-001"
         }
-    ],
-    "components": {
-        "hero_section": {
-            "type": "component-fixed-banner",
-            "title": "أهلاً بكم في كيدز ستايل",
-            "text": "ملابس أطفال مريحة وأنيقة لجميع الأعمار من 0 إلى 12 سنة",
-            "image": "",
-            "button_text": "تسوقي الآن",
-            "button_link": "/collections"
+      ],
+      "options": [
+        {
+          "label": "عادي",
+          "value": "normal",
+          "key": "season-normal-001"
         },
-        "categories": {
-            "type": "component-square-photos",
-            "title": "تسوقي حسب الفئة",
-            "collections": [
-                "baby",
-                "girls",
-                "boys",
-                "accessories"
-            ]
+        {
+          "label": "رمضان",
+          "value": "ramadan",
+          "key": "season-ramadan-002"
         },
-        "featured_products": {
-            "type": "component-featured-products",
-            "title": "منتجات مميزة",
-            "limit": 8
+        {
+          "label": "عيد",
+          "value": "eid",
+          "key": "season-eid-003"
         },
-        "testimonials": {
-            "type": "component-testimonials",
-            "title": "ماذا يقول أهلنا عنا؟"
+        {
+          "label": "العودة للمدارس",
+          "value": "back_to_school",
+          "key": "season-school-004"
         },
-        "store_features": {
-            "type": "component-store-features",
-            "title": "لماذا تختار كيدز ستايل؟",
-            "items": [
-                {
-                    "icon": "sicon-rocket",
-                    "title": "شحن سريع",
-                    "text": "توصيل خلال 2-4 أيام"
-                },
-                {
-                    "icon": "sicon-refresh",
-                    "title": "إرجاع مجاني",
-                    "text": "خلال 14 يوم"
-                },
-                {
-                    "icon": "sicon-shield",
-                    "title": "جودة مضمونة",
-                    "text": "أقمشة آمنة على بشرة الأطفال"
-                },
-                {
-                    "icon": "sicon-headphones",
-                    "title": "دعم متواصل",
-                    "text": "خدمة عملاء ودودة ومتعاونة"
-                }
-            ]
+        {
+          "label": "اليوم الوطني",
+          "value": "national_day",
+          "key": "season-national-005"
         }
+      ],
+      "source": "Manual"
     }
+  ],
+  "components": []
 }
