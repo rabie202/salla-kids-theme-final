@@ -1,10 +1,11 @@
 {
-  "name": {
+  "version": "1.0.0",
+  "theme_name": {
     "ar": "كيدز ستايل",
     "en": "Kids Style"
   },
-  "repository": "https://github.com/rabie202/salla-kids-theme",
-  "author_email": "support@kids-style.store",
+  "repo_url": "https://github.com/rabie202/salla-kids-theme",
+  "support_url": "https://github.com/rabie202/salla-kids-theme",
   "features": [
     "fonts",
     "color",

@@ -9,7 +9,7 @@
     {% hook 'head:start' %}
     {% hook head %}
     <link rel="stylesheet" href="{{ 'app.css'|asset }}">
-    {% if theme.font and theme.font.url %}<link rel="stylesheet" href="{{ theme.font.url }}">{% endif %}
+    {% if theme.font %}<link rel="stylesheet" href="{{ theme.font.path|cdn }}">{% endif %}
     <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}">
     <style>
         :root {
