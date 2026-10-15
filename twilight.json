@@ -3,7 +3,7 @@
     "ar": "كيدز ستايل",
     "en": "Kids Style"
   },
-  "repository": "https://github.com/rabie202/salla-kids-theme-final",
+  "repository": "https://github.com/rabie202/salla-kids-theme",
   "author_email": "support@kids-style.store",
   "support_url": "mailto:support@kids-style.store",
   "features": [
@@ -137,5 +137,6 @@
       ],
       "source": "Manual"
     }
-  ]
+  ],
+  "components": []
 }
