@@ -1,32 +1,14 @@
-const path = require('path');
-const ThemeWatcher = require('@salla.sa/twilight-watcher');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const path = require('path');
+const asset = file => path.resolve('src/assets', file || '');
+const publicDir = file => path.resolve('public', file || '');
 module.exports = {
   entry: {
-    main: './src/assets/js/main.js',
-    styles: './src/assets/css/style.css'
+    app: [asset('styles/app.scss'), asset('js/app.js')],
   },
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].js',
-    clean: true
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
-      }
-    ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: '[name].css'
-    }),
-    new ThemeWatcher()
-  ],
-  watchOptions: {
-    ignored: /node_modules/
-  }
+  output: { path: publicDir(), filename: '[name].js', clean: false },
+  module: { rules: [
+    { test: /\.scss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'] },
+  ]},
+  plugins: [new MiniCssExtractPlugin({ filename: '[name].css' })],
 };

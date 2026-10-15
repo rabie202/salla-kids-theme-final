@@ -69,21 +69,21 @@
       "label": "الألوان"
     },
     {
-      "type": "string",
+      "type": "color",
       "id": "primary_color",
       "label": "اللون الأساسي",
       "format": "color",
       "value": "#8B7355"
     },
     {
-      "type": "string",
+      "type": "color",
       "id": "secondary_color",
       "label": "اللون الثانوي",
       "format": "color",
       "value": "#D4B896"
     },
     {
-      "type": "string",
+      "type": "color",
       "id": "accent_color",
       "label": "لون التمييز",
       "format": "color",
@@ -136,11 +136,5 @@
       ],
       "source": "Manual"
     }
-  ],
-  "components": [],
-  "support_url": "https://kids-style.store",
-  "description": {
-    "ar": "قالب كيدز ستايل لمتاجر ملابس الأطفال.",
-    "en": "Kids Style theme for children clothing stores."
-  }
+  ]
 }

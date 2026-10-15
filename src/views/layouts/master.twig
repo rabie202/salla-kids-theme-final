@@ -1,102 +1,68 @@
 <!DOCTYPE html>
-<html lang="{{ language.code }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
+<html lang="{{ language.code|default('ar') }}" dir="{{ theme.is_rtl ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% block title %}{{ store.name|default('كيدز ستايل') }}{% endblock %}</title>
+    {% block head %}{% endblock %}
     {% hook 'head:start' %}
     {% hook head %}
-    {% block head_scripts %}{% endblock %}
-    {% block styles %}{% endblock %}
-    <link rel="stylesheet" href="{{ 'app.css' | asset }}">
-    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css' | cdn }}">
+    <link rel="stylesheet" href="{{ 'app.css'|asset }}">
+    {% if theme.font and theme.font.url %}<link rel="stylesheet" href="{{ theme.font.url }}">{% endif %}
+    <link rel="stylesheet" href="{{ 'fonts/sallaicons.css'|cdn }}">
     <style>
         :root {
-            --font-main: '{{ theme.font.name|default("DINNextLTArabic-Regular") }}';
-            --color-primary: {{ theme.color.primary|default('#8B7355') }};
-            --color-primary-dark: {{ theme.color.darker(0.15)|default('#735E48') }};
-            --color-primary-light: {{ theme.color.lighter(0.15)|default('#A98F70') }};
-            --color-primary-reverse: {{ theme.color.reverse_text|default('#FFFFFF') }};
+            --primary: {{ theme.color.primary|default('#8B7355') }};
+            --primary-dark: {{ theme.color.darker(0.15)|default('#6B5A47') }};
+            --primary-light: {{ theme.color.lighter(0.15)|default('#A0896D') }};
+            --font-main: '{{ theme.font.name|default('DINNextLTArabic') }}';
         }
     </style>
     {% hook 'head:end' %}
 </head>
-<body id="app" class="theme-light">
+<body id="app" class="kids-style-theme">
     {% hook 'body:start' %}
     <div class="app-inner">
         <div class="top-bar">
-            <div class="container">
-                <div class="top-bar-content">
-                    <div class="top-bar-text">
-                        <span>🎉 شحن مجاني للطلبات فوق 200 ريال</span>
-                        <span class="separator">|</span>
-                        <span>🔄 إرجاع مجاني خلال 14 يوم</span>
-                    </div>
-                </div>
+            <div class="container top-bar-content">
+                <span>🎉 شحن مجاني للطلبات فوق 200 ريال</span>
+                <span>↩ إرجاع مجاني خلال 14 يوم</span>
             </div>
         </div>
 
         <header class="main-header">
-            <div class="container">
-                <div class="header-content">
-                    <div class="logo"><a href="{{ store.url }}"><span class="logo-text">{{ store.name }}</span></a></div>
-                    <div class="header-search">
-                        <salla-search></salla-search>
-                    </div>
-                    <div class="header-actions">
-                        <salla-user-menu></salla-user-menu>
-                        <salla-wishlist-summary></salla-wishlist-summary>
-                        <salla-cart-summary></salla-cart-summary>
-                    </div>
+            <div class="container header-content">
+                <a class="logo" href="{{ store.url|default('/') }}">{{ store.name|default('كيدز ستايل') }}</a>
+                <div class="header-search"><salla-search></salla-search></div>
+                <div class="header-actions">
+                    <salla-user-menu></salla-user-menu>
+                    <salla-wishlist-summary></salla-wishlist-summary>
+                    <salla-cart-summary></salla-cart-summary>
                 </div>
-                <nav class="main-nav">
-                    <salla-menu></salla-menu>
-                </nav>
+            </div>
+            <div class="container nav-wrap">
+                <salla-menu></salla-menu>
             </div>
         </header>
 
-        <main id="main-content" role="main">
-            {% block content %}{% endblock %}
-        </main>
+        <main id="main-content">{% block content %}{% endblock %}</main>
 
         <footer class="main-footer">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-col">
-                        <h4>عن {{ store.name }}</h4>
-                        <p>{{ store.description }}</p>
-                        <div class="social-links">
-                            {% if store.social.instagram %}<a href="{{ store.social.instagram }}">Instagram</a>{% endif %}
-                            {% if store.social.twitter %}<a href="{{ store.social.twitter }}">X</a>{% endif %}
-                            {% if store.social.snapchat %}<a href="{{ store.social.snapchat }}">Snapchat</a>{% endif %}
-                            {% if store.social.tiktok %}<a href="{{ store.social.tiktok }}">TikTok</a>{% endif %}
-                        </div>
-                    </div>
-                    <div class="footer-col">
-                        <h4>تواصل معنا</h4>
-                        <ul class="contact-info">
-                            {% if store.contacts.email %}<li>{{ store.contacts.email }}</li>{% endif %}
-                            {% if store.contacts.mobile %}<li>{{ store.contacts.mobile }}</li>{% endif %}
-                            {% if store.contacts.whatsapp %}<li>{{ store.contacts.whatsapp }}</li>{% endif %}
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>النشرة البريدية</h4>
-                        <form class="newsletter-form">
-                            <input type="email" placeholder="بريدك الإلكتروني" required>
-                            <button type="submit">اشتراك</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>© {{ 'now'|date('Y') }} {{ store.name }}. جميع الحقوق محفوظة.</p>
-                </div>
+            <div class="container footer-grid">
+                <div><h3>{{ store.name|default('كيدز ستايل') }}</h3><p>ملابس أطفال مريحة وأنيقة من 0 إلى 12 سنة، بتصاميم عملية وأقمشة مناسبة للصغار.</p></div>
+                <div><h4>روابط سريعة</h4><a href="/">الرئيسية</a><a href="/collections">المنتجات</a><a href="/pages/contact-us">تواصل معنا</a></div>
+                <div><h4>خدمة العملاء</h4><a href="/pages/shipping-and-delivery">الشحن والتوصيل</a><a href="/pages/return-policy">الإرجاع والاستبدال</a><a href="/pages/privacy-policy">الخصوصية</a></div>
+                <div><h4>تواصل معنا</h4><p>{{ store.contacts.email|default('support@kids-style.store') }}</p><p>{{ store.contacts.mobile|default('') }}</p></div>
             </div>
+            <div class="container footer-bottom">© {{ 'now'|date('Y') }} {{ store.name|default('كيدز ستايل') }} — جميع الحقوق محفوظة.</div>
         </footer>
     </div>
-
     {% hook 'body:end' %}
-    <script defer src="{{ 'app.js' | asset }}"></script>
+    <salla-add-product-toast></salla-add-product-toast>
+    <salla-offer-modal></salla-offer-modal>
+    <salla-login-modal></salla-login-modal>
+    <script defer src="{{ 'app.js'|asset }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>
