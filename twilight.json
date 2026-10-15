@@ -25,6 +25,7 @@
       "id": "show_whatsapp_button",
       "label": "إظهار زر واتساب",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -32,6 +33,7 @@
       "id": "show_sticky_cart",
       "label": "شريط شراء ثابت على الجوال",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -39,6 +41,7 @@
       "id": "show_seasonal_mode",
       "label": "وضع موسمي (رمضان، عيد)",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -46,6 +49,7 @@
       "id": "show_testimonials",
       "label": "إظهار آراء العملاء",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -53,6 +57,7 @@
       "id": "show_trust_badges",
       "label": "شارات الثقة",
       "format": "switch",
+      "value": true,
       "selected": true
     },
     {
@@ -97,36 +102,37 @@
         {
           "label": "عادي",
           "value": "normal",
-          "key": "f4adec13-6e4c-654b-b978-b2807935ced9"
+          "key": "season-normal-001"
         }
       ],
       "options": [
         {
           "label": "عادي",
           "value": "normal",
-          "key": "f4adec13-6e4c-654b-b978-b2807935ced9"
+          "key": "season-normal-001"
         },
         {
           "label": "رمضان",
           "value": "ramadan",
-          "key": "e9c8ea8f-c5c6-234e-9353-3bce269afde4"
+          "key": "season-ramadan-002"
         },
         {
           "label": "عيد",
           "value": "eid",
-          "key": "a3d1f7b2-8c4e-4a9b-9d2f-1e5c7b8a3d6f"
+          "key": "season-eid-003"
         },
         {
           "label": "العودة للمدارس",
           "value": "back_to_school",
-          "key": "b7e2a9c4-5f8d-4e1a-9c3d-2f6a8b5c7e9d"
+          "key": "season-school-004"
         },
         {
           "label": "اليوم الوطني",
           "value": "national_day",
-          "key": "c8f3b0d5-6a9e-4f2b-8d4e-3a7c9b6d8f1e"
+          "key": "season-national-005"
         }
-      ]
+      ],
+      "source": "Manual"
     }
   ],
   "components": []
